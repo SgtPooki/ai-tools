@@ -33,3 +33,23 @@ A vertical is a good fit when its data carries legal/scientific/financial weight
 ## Note on privacy
 
 Public storage rules out plaintext PHI/PII. For healthcare and any regulated personal data, the design must be encryption-first (commit-and-selectively-reveal, age-encrypted shards) per agent-flight-recorder's PRIVACY_AND_ENCRYPTION.md. Verticals scored "very high" privacy barrier are viable only with that.
+
+## Vertical ideation results
+
+Ran one ideation pass with each model assigned a distinct vertical cluster. Filed the distinct winners; recorded the folds below.
+
+Filed (issues #27-#33):
+- #27 Frozen Analysis Window (science: preregistration integrity)
+- #28 Takedown-Resilient Mirror Desk (journalism: censorship-resistant archival agent)
+- #29 Source Risk Splitter (human rights: redaction + provenance)
+- #30 GxP Shadow-Chain Sentinel (pharma: lab data-integrity fraud)
+- #31 Privilege Log Custody (legal/eDiscovery)
+- #32 Recall Provenance Spine (supply chain/ESG: decision-time attestation pinning)
+- #33 FOIA Deadline Streams (civic: retention-funded public records)
+
+Folded, not filed (duplicates of taken work):
+- Agent Claim Anchors (science): overlaps citation notary (ai-tools#1).
+- Repro Evidence Pack (journalism): overlaps flight recorder + science cluster.
+- Provenance Quarantine Agent (deepfake C2PA): valuable but a provenance-stamp shape; revisit if a media partner wants it.
+- Model Change Ledger (RegTech): the proposer flagged it as flight-recorder overlap; the only new angle is pre-deployment config gating.
+- Blinded Cohort Arbiter, Biobank Telemetry Witness, Pharma IP Ledger (healthcare): each leans on a hard external dependency (pay-stream finance shape, sensor TEE, or prior-art notary). Parked pending a real healthcare partner, since the privacy/TEE constraints dominate.
