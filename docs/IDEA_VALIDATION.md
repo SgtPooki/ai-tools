@@ -33,3 +33,26 @@ These are the load-bearing facts every verdict below rests on:
 ## Survivors
 
 Tracked as issues #6-#12: Sealed Benchmark Vault, agent dead-man's switch (design-first), paid context packs (merged from Metered RAG Faucet + Model Context Vending, with the payment model corrected), Compute Witness Cache, Forecast League, Robot Receipt Inbox, Hibernation Vault.
+
+## Round 2 (2026-06-11, same day): primitives-first ideation
+
+Round 2 gave the four agents the verified facts up front and asked them to exploit the corners. Convergence was strong: all four proposed settlement keepers, fault-conditioned finance, and egress-griefing protection independently.
+
+### Additional verified facts
+
+8. **Proof state is contract-readable, not just event-emitted.** `FilecoinWarmStorageServiceStateView.sol` exposes `provenPeriods(dataSetId, periodId)` and `provenThisPeriod(dataSetId)` as public views. Deployed on mainnet (`0xB1B3A3d979c1f233c1021EF98dff9c0932FF1bb9`) and calibration (`0x537320bd004a7FDd3c1932ca64BD88268301322A`); ABI ships in synapse-sdk (`abis/generated.ts`). A custom Pay validator can therefore settle against PDP proof history with no oracle.
+9. **Settlement timing carries no alpha.** FWSS `validatePayment` (FilecoinWarmStorageService.sol:1475) computes payment per epoch from `_isPeriodProven`; faulted periods settle at zero whenever settlement runs, and open periods block settlement until resolved. Settle now or settle later, the amounts are identical.
+10. FWSS `validatePayment` + `_findProvenEpochs` is a working in-tree template for any "pay only for proven epochs" validator.
+
+### Round 2 rejected
+
+| Idea (sources) | Why rejected |
+|---|---|
+| Settlement Sniper / Crank (all four) | Fact 9: no timing alpha. What remains is settlement-as-a-convenience, and payees can self-settle. |
+| ERC-8004 Egress Gatekeeper (gemini) | The FilBeam URL is derivable from public info (owner address + CID); a gatekeeper that hands out public URLs gates nothing after the first leak. |
+| Fault-responsive self-healing re-pin (gemini, cursor) | Mechanically viable, but Warm Storage's own roadmap lists automated repair; check with the team before duplicating protocol-level work. |
+| Persistence-gated reveal / Epoch Secret Vault / Time Capsule (cursor, codex, gemini) | Real (fact 8 makes the validator version work), but it's a generalization of Sealed Benchmark Vault (#6); folded there as a note rather than a separate issue. |
+
+### Round 2 survivors
+
+Issues #13-#16: Provider Credit Score Oracle, Fault Futures Desk, Proof-Paced Vesting, Egress Tripwire. The first three compose: PDP proof history as a zero-oracle financial settlement layer.
