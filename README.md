@@ -8,6 +8,8 @@ Tracking repo for small agent x [Filecoin Onchain Cloud](https://filecoin.cloud)
 
 ## Tracked ideas
 
+Flagship design: [Continuum](https://github.com/SgtPooki/ai-tools/issues/38).. resumable/forkable agent context as a Merkle-CRDT on FOC ([spec](docs/THOUGHT_DAG_SPEC.md)).
+
 Adoption/DevEx strategy (built on the official [`@fil-b/foc-storage-mcp`](https://github.com/FIL-Builders/foc-storage-mcp), not a rebuild): [docs/ADOPTION_KIT.md](docs/ADOPTION_KIT.md). Vertical fit: [docs/VERTICAL_ALIGNMENT.md](docs/VERTICAL_ALIGNMENT.md). Idea validation log: [docs/IDEA_VALIDATION.md](docs/IDEA_VALIDATION.md).
 
 See [open issues](https://github.com/SgtPooki/ai-tools/issues) for the backlog. The theme across all of them: agents need storage, payments, and provenance with no human in the loop, and FOC provides all three as contracts instead of accounts.
