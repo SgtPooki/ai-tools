@@ -8,6 +8,8 @@ Tracking repo for small agent x [Filecoin Onchain Cloud](https://filecoin.cloud)
 
 ## Tracked ideas
 
+Adoption/DevEx strategy (built on the official [`@fil-b/foc-storage-mcp`](https://github.com/FIL-Builders/foc-storage-mcp), not a rebuild): [docs/ADOPTION_KIT.md](docs/ADOPTION_KIT.md). Vertical fit: [docs/VERTICAL_ALIGNMENT.md](docs/VERTICAL_ALIGNMENT.md). Idea validation log: [docs/IDEA_VALIDATION.md](docs/IDEA_VALIDATION.md).
+
 See [open issues](https://github.com/SgtPooki/ai-tools/issues) for the backlog. The theme across all of them: agents need storage, payments, and provenance with no human in the loop, and FOC provides all three as contracts instead of accounts.
 
 Common ground each POC builds on (proven in agent-flight-recorder):
