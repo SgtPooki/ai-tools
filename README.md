@@ -4,6 +4,7 @@ Tracking repo for small agent x [Filecoin Onchain Cloud](https://filecoin.cloud)
 
 ## Shipped
 
+- [fixity](https://github.com/SgtPooki/fixity): pin, verify, and prove agent supply-chain artifacts (skills, MCP configs, prompts) by CID on Filecoin. Content-addressed + wallet-signed + retrievable without a wallet. Stops the ClawHub-style post-review skill swap. (was issue #2)
 - [agent-flight-recorder](https://github.com/SgtPooki/agent-flight-recorder): tamper-evident agent audit trail sealed to Filecoin Warm Storage. Hash-chained Claude Code hook events, signed seals, self-funding Filecoin Pay deposits, daily PDP proofs. Receipts, not self-reports.
 
 ## Tracked ideas
